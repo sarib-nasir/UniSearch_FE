@@ -1,0 +1,159 @@
+.hero {
+    text-align: left;
+    padding: 50px;
+}
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #000;
+}
+nz-card {
+    border-radius: 20px;
+}
+
+.image-card {
+    background: url('../../../../assets/Images/TUD.jpg') center center no-repeat;
+    background-size: cover;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Ensure text is readable */
+    padding: 20px; /* Add padding to prevent content from touching edges */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+  
+/* Adjust styles for smaller screens */
+@media (max-width: 768px) {
+    .custom-card {
+        background-size: contain; /* Prevents cutting off */
+        min-height: 150px; /* Adjust height for smaller screens */
+        padding: 10px;
+    }
+}
+
+
+
+.hero-section {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 0px 10%;
+}
+  
+  .hero-text {
+    h1 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #222;
+    }
+  
+    .gradient-text {
+      background: linear-gradient(90deg, #7b61ff, #c56cf0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+  
+      .btn-primary {
+        background: #514a38;
+        color: #fff;
+        border-radius: 30px;
+        padding: 12px 24px;
+      }
+  
+      .btn-demo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #a0884d;
+        color: #fff;
+        border-radius: 30px;
+        padding: 12px 24px;
+      }
+    }
+  }
+  
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  /* @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .floating-shape {
+    animation: float 3s ease-in-out infinite;
+  }   */
+
+
+
+
+
+  .image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+  
+    .main-image {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+    }
+  
+    .circle-bg {
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle, rgba(106, 13, 173, 0.2), transparent);
+      border-radius: 50%;
+      top: -10%;
+      left: -10%;
+      z-index: 1;
+    }
+  
+    .floating-text {
+      position: absolute;
+      top: 10%;
+      right: -10%;
+      background: black;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 3;
+    }
+  }
+
+
+.square {
+  height: 100px;
+  width: 100px;
+  background-color: #514a38;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.blob-img{
+  background:url('../../../../assets/Images/blob-2-opacity-47.gif') no-repeat, url('../../../../assets/Images/blob-1-opacity-59.gif') no-repeat;
+  background-position: 150px;
+  background-size: 500px 400px;
+}
+.hero-image{
+  background: url('../../../..//assets/Images/blob-1-opacity-59.gif') no-repeat, url('../../../../assets/Images/blob-2-opacity-47.gif') no-repeat;
+  background-size: 600px 300px;
+}

@@ -1,0 +1,20 @@
+html {
+  --antd-wave-shadow-color: none;
+  --scroll-bar: 0;
+}
+*, *::before, *::after {
+  box-sizing: content-box; /* Default value */
+}
+body {
+  background-color: #f4efe0 !important;
+  font-family: Arial, sans-serif;
+}
+nz-header {
+  padding: 0px;
+}
+.text-white{
+  color: #ffff;
+}
+.text-white input ,.text-white select{
+  border-radius: 10px;
+}

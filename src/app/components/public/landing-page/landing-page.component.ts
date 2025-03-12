@@ -16,9 +16,13 @@ import { NzFormLayoutType, NzFormModule } from 'ng-zorro-antd/form';
 import { PublicNavbarComponent } from "../../shared/public-navbar/public-navbar.component";
 import { PublicFooterComponent } from "../../shared/public-footer/public-footer.component";
 import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { ProgramsServiceApi } from './program-service-api.service';
+import { lastValueFrom } from 'rxjs';
+
+
 @Component({
   selector: 'app-landing-page',
-  imports: [CommonModule,NzIconModule,NzFormModule,NzCardModule ,NzSpaceModule , NzCardComponent, NzTableModule, NzDividerModule, NzGridModule, FormsModule, NzButtonModule, NzInputModule, NzSelectModule, PublicNavbarComponent, PublicFooterComponent],
+  imports: [CommonModule,NzIconModule,NzFormModule,NzCardModule ,NzSpaceModule , NzCardComponent, NzTableModule, NzDividerModule, NzGridModule, FormsModule, NzButtonModule, NzInputModule, NzSelectModule, PublicNavbarComponent, PublicFooterComponent ],
   standalone: true,
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
@@ -30,25 +34,30 @@ export class LandingPageComponent {
   LOGOUT_ICON: string = '';
   CurrentDate: string = '';
   CurrentYear: string = '' 
+  ProgramsList: any = [];
 
-  ActionsList:any = [
-    {
-      label: 'Name',
-      currentStepNo: 1
-    },
-    {
-      label: 'Name 2',
-      currentStepNo: 1
-    },
-    {
-      label: 'Name 3',
-      currentStepNo: 1
-    },
-    {
-      label: 'Name 4',
-      currentStepNo: 1
-    },
-  ]
+  constructor(
+    private _ProgramsServiceApi: ProgramsServiceApi
+  ) {
+  }
+  ngOnInit() {
+    this.onResize();
+    this.getProgramDetails();
+    this.CurrentDate = new Date().toDateString();
+    this.CurrentYear = new Date().getFullYear().toString();
+  }
+  
+  getProgramDetails() {
+    let body = {
+      IS_ACTIVE: true
+    }
+    lastValueFrom(this._ProgramsServiceApi.GetProgramsDetail(body)).then(response => {
+      if (response.statusCode == '00') {  
+        this.ProgramsList = response.data;
+      }
+    });
+  }
+
   onResize() {
     var width = window.innerWidth;
     if (width > 600 && width < 700) {
@@ -70,44 +79,5 @@ export class LandingPageComponent {
       this.USER_ICON = "user-icon";
       this.LOGOUT_ICON = "log-out-icon";
     }
-  }
-  countries = ['USA', 'UK', 'Canada', 'Germany', 'Australia'];
-  fields = ['Computer Science', 'Business', 'Medicine', 'Engineering', 'Law'];
-  selectedCountry = '';
-  selectedField = '';
-  gpa: number | null = null;
-  ielts: number | null = null;
-
-  searchUniversities() {
-    console.log('Searching for universities with filters:', {
-      country: this.selectedCountry,
-      field: this.selectedField,
-      gpa: this.gpa,
-      ielts: this.ielts,
-    });
-  }
-  universities = [
-    {
-      name: 'Harvard University',
-      location: 'USA',
-      ranking: 1,
-      tuition: '$50,000',
-      image: 'assets/universities/harvard.jpg'
-    },
-    {
-      name: 'University of Toronto',
-      location: 'Canada',
-      ranking: 26,
-      tuition: '$45,000',
-      image: 'assets/universities/toronto.jpg'
-    }
-  ];
-  
-  apply(university: any) {
-    console.log('Applying to:', university.name);
-  }
-  
-  viewDetails(university: any) {
-    console.log('Viewing details for:', university.name);
   }
 }

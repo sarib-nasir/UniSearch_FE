@@ -16,6 +16,13 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 registerLocaleData(en);
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes),provideHttpClient(), provideZoneChangeDetection({ eventCoalescing: true }), provideClientHydration(withEventReplay()), provideNzIcons(icons), provideNzI18n(en_US), importProvidersFrom(FormsModule),
+  providers: [
+    // provideRouter(routes),
+    provideHttpClient(),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideClientHydration(withEventReplay()),
+    provideNzIcons(icons),
+    provideNzI18n(en_US),
+    importProvidersFrom(FormsModule),
   ]
 };

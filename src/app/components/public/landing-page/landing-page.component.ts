@@ -18,66 +18,21 @@ import { PublicFooterComponent } from "../../shared/public-footer/public-footer.
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { ProgramsServiceApi } from './program-service-api.service';
 import { lastValueFrom } from 'rxjs';
+import { ProgramsListComponent } from "../programs-list/programs-list.component";
 
 
 @Component({
   selector: 'app-landing-page',
-  imports: [CommonModule,NzIconModule,NzFormModule,NzCardModule ,NzSpaceModule , NzCardComponent, NzTableModule, NzDividerModule, NzGridModule, FormsModule, NzButtonModule, NzInputModule, NzSelectModule, PublicNavbarComponent, PublicFooterComponent ],
+  imports: [CommonModule, NzIconModule, NzFormModule, NzCardModule, NzSpaceModule, NzCardComponent, NzGridModule, FormsModule, NzButtonModule, NzInputModule, NzSelectModule, PublicNavbarComponent, PublicFooterComponent, ProgramsListComponent],
   standalone: true,
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent {
-  WELCOME_TEXT: string = '';
-  LOG_OUT_TEXT: string = '';
-  USER_ICON: string = '';
-  LOGOUT_ICON: string = '';
-  CurrentDate: string = '';
-  CurrentYear: string = '' 
-  ProgramsList: any = [];
 
-  constructor(
-    private _ProgramsServiceApi: ProgramsServiceApi
-  ) {
-  }
+  constructor() {}
+
   ngOnInit() {
-    this.onResize();
-    this.getProgramDetails();
-    this.CurrentDate = new Date().toDateString();
-    this.CurrentYear = new Date().getFullYear().toString();
   }
   
-  getProgramDetails() {
-    let body = {
-      IS_ACTIVE: true
-    }
-    lastValueFrom(this._ProgramsServiceApi.GetProgramsDetail(body)).then(response => {
-      if (response.statusCode == '00') {  
-        this.ProgramsList = response.data;
-      }
-    });
-  }
-
-  onResize() {
-    var width = window.innerWidth;
-    if (width > 600 && width < 700) {
-
-      this.WELCOME_TEXT = "user-name-sm";
-      this.LOG_OUT_TEXT = "log-out-text-sm";
-      this.USER_ICON = "user-icon-sm";
-      this.LOGOUT_ICON = "log-out-icon-sm";
-    }
-    else if (width < 600) {
-      this.USER_ICON = "user-icon-sm";
-      this.LOGOUT_ICON = "log-out-icon-sm";
-      this.WELCOME_TEXT = "user-name-xs";
-      this.LOG_OUT_TEXT = "log-out-text-xs";
-    }
-    else if (width > 700) {
-      this.WELCOME_TEXT = "user-name";
-      this.LOG_OUT_TEXT = "log-out-text";
-      this.USER_ICON = "user-icon";
-      this.LOGOUT_ICON = "log-out-icon";
-    }
-  }
 }

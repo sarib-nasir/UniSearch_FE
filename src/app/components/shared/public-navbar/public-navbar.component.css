@@ -15,3 +15,8 @@ nz-header {
 .ant-layout, .ant-menu-horizontal{
     background-color: transparent;
 }
+.gradient-text {
+    background: linear-gradient(90deg, #7b61ff, #c56cf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

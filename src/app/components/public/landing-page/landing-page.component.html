@@ -10,9 +10,9 @@
                 </h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 <div class="buttons">
-                    <button nz-button nzType="primary" class="btn-primary">Get Started</button>
-                    <button nz-button nzType="default" class="btn-demo">
-                        <i nz-icon nzType="play-circle"></i> See Demo
+                    <input nz-input placeholder="Find a Program" style="border-radius: 50px;" type="text" />
+                    <button nz-button nzType="default" class="btn-demo" style="margin-right:80px">
+                        <i nz-icon nzType="search"></i> Search
                     </button>
                 </div>
             </nz-col>
@@ -107,38 +107,8 @@
 <div nz-content class="zoom">
     <div nz-row class="listView" nzJustify="center">
         <div nz-col nzSpan="23">
-            <nz-table #sortTable nzShowPagination nzShowSizeChanger id="data-table" class="custom" nzTableLayout="fixed"
-                nzSize="small" [nzData]="ProgramsList" [nzScroll]="{ x: '700px' }" nzBreakWord="false" [nzPageSize]="20">
-                <thead>
-                    <tr>
-                        <th nzAlign="center"> Label</th>
-                        <th nzAlign="center"> Current Step</th>
-                        <th nzAlign="center"> Next Step</th>
-                        <th nzAlign="center"> Next Step False</th>
-                        <th nzAlign="center">Status</th>
-                        <th nzAlign="center" nzRight nzWidth="150px">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let data of sortTable.data">
-                        <td nzAlign="center">{{data.label}}</td>
-                        <td nzAlign="center">{{data?.currentStepNo}}</td>
-                        <td nzAlign="center">{{data?.nextStepNo}}</td>
-                        <td nzAlign="center">{{data?.nextStepNoFalse}}</td>
-                        <td nzAlign="center">{{data?.statusId}}</td>
-                        <td nzAlign="center" nzRight>
-                            <button  nz-button nzType="primary" nz-tooltip
-                                nzTooltipTitle="Edit" nzTooltipPlacement="top" nzSize="small">
-                                <i nz-icon nzType="edit" nzTheme="outline"></i>
-                            </button>
-                            <button class="ml-10" nz-button nzType="primary"
-                                nz-tooltip nzTooltipTitle="View" nzTooltipPlacement="top" nzSize="small">
-                                <i nz-icon nzType="eye" nzTheme="outline"></i>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </nz-table>
+            <app-programs-list></app-programs-list>
+
         </div>
     </div>
 </div>

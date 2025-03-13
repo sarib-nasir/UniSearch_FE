@@ -1,5 +1,5 @@
 export class ApiResponse {
-  statusCode: string = '11';
+  status_code: string = '11';
   message: string = '';
   attempTry: string = '0';
   data: any;

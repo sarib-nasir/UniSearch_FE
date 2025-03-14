@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
@@ -19,6 +19,7 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { ProgramsServiceApi } from './program-service-api.service';
 import { lastValueFrom } from 'rxjs';
 import { ProgramsListComponent } from "../programs-list/programs-list.component";
+import { encryptDetail } from '../../../core/utils/token.utils';
 
 
 @Component({
@@ -29,10 +30,16 @@ import { ProgramsListComponent } from "../programs-list/programs-list.component"
   styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent {
-
-  constructor() {}
+  programName: string = '';
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
-  
+  navigateToPrograms() {
+    this.router.navigate(['/programs']);
+  }
+  SearchPrograms() {
+    console.log(this.programName);
+    this.router.navigate(['/programs'], { queryParams: { USERID: encryptDetail(this.programName) } });
+  }
 }

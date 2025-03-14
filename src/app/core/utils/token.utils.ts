@@ -1,12 +1,12 @@
-import { SESSION_STORAGE_KEYS } from '../constants/local-storage-keys copy';
+import { SESSION_STORAGE_KEYS } from '../constants/local-storage-keys';
 import * as CryptoJS from 'crypto-js';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../environments/environment';
 
 export const getToken = (): string => {
   return decryptDetailParam(sessionStorage.getItem(SESSION_STORAGE_KEYS.Token));
 };
-export const decryptDetailParam = (msg): string => {
-  if(msg != null){
+export const decryptDetailParam = (msg: string | null): string => {
+  if (msg != null) {
     var decryptedMessage = CryptoJS.AES.decrypt(
       msg,
       environment.appKEY1
@@ -21,7 +21,7 @@ export const decryptDetailParam = (msg): string => {
   
     return decryptedMessage;
   }
-  
+  return '';
 };
 // getting user Detail from Token----------------------------
 export const getUserDetail = (): string => {
@@ -29,10 +29,10 @@ export const getUserDetail = (): string => {
     const user = window.atob(getToken().split('.')[1]);
     return JSON.parse(user);
   }
-  return null;
+  return '';
 };
 // End ----------------------------------------------
-export const encryptData = (msg): string => {
+export const encryptData = (msg: string): string => {
   var keySize = 256;
   var salt = CryptoJS.lib.WordArray.random(16);
   var key = CryptoJS.PBKDF2(environment.appKEY1, salt, {
@@ -55,7 +55,7 @@ export const encryptData = (msg): string => {
   return result;
 };
 
-export const decryptData = (ciphertextB64): string => {
+export const decryptData = (ciphertextB64: string): string => {
   var key = CryptoJS.enc.Utf8.parse(environment.appKEY2);
   var iv = CryptoJS.lib.WordArray.create([0x00, 0x00, 0x00, 0x00]);
 
@@ -63,7 +63,7 @@ export const decryptData = (ciphertextB64): string => {
   return decrypted.toString(CryptoJS.enc.Utf8);
 };
 
-export const encryptDetail = (msg): string => {
+export const encryptDetail = (msg: string): string => {
   var encryptedMessage = CryptoJS.AES.encrypt(
     msg.trim(),
     environment.appKEY1

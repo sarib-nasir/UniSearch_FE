@@ -18,8 +18,7 @@ import { RouterOutlet } from '@angular/router';
     NzButtonModule,
     NzLayoutModule,
     NzCardModule,
-    NzIconModule,
-    LandingPageComponent
+    NzIconModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

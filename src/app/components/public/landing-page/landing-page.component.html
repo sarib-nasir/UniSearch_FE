@@ -10,8 +10,8 @@
                 </h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 <div class="buttons">
-                    <input nz-input placeholder="Find a Program" style="border-radius: 50px;" type="text" />
-                    <button nz-button nzType="default" class="btn-demo" style="margin-right:80px">
+                    <input nz-input placeholder="Find a Program" [(ngModel)]="programName" style="border-radius: 50px;" type="text" />
+                    <button nz-button nzType="default" class="btn-demo" (click)="SearchPrograms()" style="margin-right:80px">
                         <i nz-icon nzType="search"></i> Search
                     </button>
                 </div>

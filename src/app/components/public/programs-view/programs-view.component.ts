@@ -8,10 +8,11 @@ import { PublicFooterComponent } from "../../shared/public-footer/public-footer.
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { ProgramsTabularListComponent } from "../programs-tabular-list/programs-tabular-list.component";
 
 @Component({
   selector: 'app-programs-view',
-  imports: [CommonModule, NzGridModule, FiltersComponent, ProgramsListComponent, PublicNavbarComponent, PublicFooterComponent, NzIconModule, NzMenuModule, NzLayoutModule],
+  imports: [CommonModule, NzGridModule, FiltersComponent, PublicNavbarComponent, PublicFooterComponent, NzIconModule, NzMenuModule, NzLayoutModule, ProgramsTabularListComponent],
   templateUrl: './programs-view.component.html',
   styleUrl: './programs-view.component.css'
 })

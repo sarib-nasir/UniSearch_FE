@@ -1,6 +1,0 @@
-.custom-table th{
-    background-color:  #4c626d !important;color: white !important;
-}
-.custom-table th, .custom-table td {
-    padding: auto; /* Ensures enough space between elements */
-}

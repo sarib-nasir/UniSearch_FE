@@ -18,13 +18,13 @@ import { PublicFooterComponent } from "../../shared/public-footer/public-footer.
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { ProgramsServiceApi } from './program-service-api.service';
 import { lastValueFrom } from 'rxjs';
-import { ProgramsListComponent } from "../programs-list/programs-list.component";
 import { encryptDetail } from '../../../core/utils/token.utils';
+import { ProgramsTabularListComponent } from "../programs-tabular-list/programs-tabular-list.component";
 
 
 @Component({
   selector: 'app-landing-page',
-  imports: [CommonModule, NzIconModule, NzFormModule, NzCardModule, NzSpaceModule, NzCardComponent, NzGridModule, FormsModule, NzButtonModule, NzInputModule, NzSelectModule, PublicNavbarComponent, PublicFooterComponent, ProgramsListComponent],
+  imports: [CommonModule, NzIconModule, NzFormModule, NzCardModule, NzSpaceModule, NzCardComponent, NzGridModule, FormsModule, NzButtonModule, NzInputModule, NzSelectModule, PublicNavbarComponent, PublicFooterComponent, ProgramsTabularListComponent],
   standalone: true,
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
@@ -35,11 +35,8 @@ export class LandingPageComponent {
 
   ngOnInit() {
   }
-  navigateToPrograms() {
-    this.router.navigate(['/programs']);
-  }
   SearchPrograms() {
     console.log(this.programName);
-    this.router.navigate(['/programs'], { queryParams: { USERID: encryptDetail(this.programName) } });
+    this.router.navigate(['/programs'], { queryParams: { programName: encryptDetail(this.programName) } });
   }
 }

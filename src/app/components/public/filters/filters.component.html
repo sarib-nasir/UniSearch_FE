@@ -1,1 +1,24 @@
-<p>filters works perfect!</p>
+<div nz-row nzJustify="center" style="padding:20px">
+    <nz-form-item nz-col nzSpan="24">
+        <nz-form-label class="custom-label" nzFor="program-search">Program Name</nz-form-label>
+        <nz-form-control [nzSm]="24" [nzXs]="24">
+            <input nz-input [(ngModel)]="programName" placeholder="Enter program name" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-col nzSpan="24">
+        <nz-form-label class="custom-label" nzFor="ielts-score">IELTS Score</nz-form-label>
+        <nz-form-control [nzSm]="24" [nzXs]="24">
+        <input nz-input type="number" [(ngModel)]="ielts" step="0.1" placeholder="Enter IELTS score" />
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item nz-col nzSpan="24">
+        <nz-form-label class="custom-label" nzFor="gpa">GPA</nz-form-label>
+        <nz-form-control [nzSm]="24" [nzXs]="24">
+            <input nz-input type="number" [(ngModel)]="gpa" step="0.1" placeholder="Enter GPA" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-col nzSpan="24">
+        <button nz-button nzType="primary" (click)="SearchPrograms()" class="btn-demo" style="margin-right:80px"><i nz-icon nzType="search"></i> Search </button>
+    </nz-form-item>
+</div>

@@ -1,20 +1,12 @@
 <app-public-navbar></app-public-navbar>
 <div nz-row style="margin: 50px;">
     <div nz-col [nzSpan]="4" style="margin-right: 20px;">
-        <div style="height : 100vh;background-color: #a0884d;">
-            <app-filters></app-filters>
-            
+        <div style="height : 80vh;background-color: #a0884d;">
+            <app-filters [programName]="programName" (filterBody)="handleFilters($event)"></app-filters>
         </div>
     </div>
     <div nz-col [nzSpan]="19"  >
-        
-        <nz-layout class="inner-layout">
-
-            <nz-content class="inner-content">
-                <app-programs-tabular-list></app-programs-tabular-list>
-            </nz-content>
-          </nz-layout>
-        <!-- <app-filters></app-filters> -->
+        <app-programs-tabular-list [programsList]="programsList"></app-programs-tabular-list>
     </div>
 </div>
 <app-public-footer></app-public-footer>

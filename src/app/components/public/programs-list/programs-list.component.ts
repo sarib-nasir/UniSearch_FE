@@ -5,13 +5,6 @@ import { ProgramsServiceApi } from '../landing-page/program-service-api.service'
 import { lastValueFrom } from 'rxjs';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 
-
-interface Person {
-  key: string;
-  name: string;
-  age: number;
-  address: string;
-}
 @Component({
   selector: 'app-programs-list',
   imports: [CommonModule,NzDividerModule, NzTableModule],

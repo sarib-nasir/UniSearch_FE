@@ -5,7 +5,7 @@ import { environment } from '../../../environments/environment';
 export const getToken = (): string => {
   return decryptDetailParam(sessionStorage.getItem(SESSION_STORAGE_KEYS.Token));
 };
-export const decryptDetailParam = (msg: string | null): string => {
+export let decryptDetailParam = (msg: string | null): string => {
   if (msg != null) {
     var decryptedMessage = CryptoJS.AES.decrypt(
       msg,
@@ -70,4 +70,20 @@ export const encryptDetail = (msg: string): string => {
   ).toString();
 
   return encryptedMessage;
+};
+
+decryptDetailParam = (msg: string | null): string => {
+  if (msg != null) {
+    var decryptedMessage = CryptoJS.AES.decrypt(
+      msg,
+      environment.appKEY1
+    ).toString(CryptoJS.enc.Utf8);
+    if (
+      decryptedMessage != null ||
+      decryptedMessage != ''
+    )
+
+    return decryptedMessage;
+  }
+  return '';
 };

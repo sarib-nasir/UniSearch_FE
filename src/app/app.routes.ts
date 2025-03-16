@@ -3,6 +3,7 @@ import { LandingPageComponent } from './components/public/landing-page/landing-p
 import { ProgramsViewComponent } from './components/public/programs-view/programs-view.component';
 
 export const routes: Routes = [
-    { path: '', component: LandingPageComponent },
+    { path: '', redirectTo: 'Home', pathMatch: 'full' },
+    { path: 'Home', component: LandingPageComponent },
     { path: 'programs', component: ProgramsViewComponent },
 ];

@@ -24,7 +24,7 @@ import { ProgramsTabularListComponent } from "../programs-tabular-list/programs-
 
 @Component({
   selector: 'app-landing-page',
-  imports: [CommonModule, NzIconModule, NzFormModule, NzCardModule, NzSpaceModule, NzCardComponent, NzGridModule, FormsModule, NzButtonModule, NzInputModule, NzSelectModule, PublicNavbarComponent, PublicFooterComponent, ProgramsTabularListComponent],
+  imports: [CommonModule, NzIconModule, NzFormModule, NzCardModule, NzSpaceModule, NzCardComponent, NzGridModule, FormsModule, NzButtonModule, NzInputModule, NzSelectModule, PublicNavbarComponent, PublicFooterComponent],
   standalone: true,
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'

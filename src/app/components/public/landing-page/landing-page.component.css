@@ -23,18 +23,19 @@ nz-card {
     border-radius: 10px; /* Optional: Add rounded corners */
 }
   
-/* Adjust styles for smaller screens */
-@media (max-width: 768px) {
-    .custom-card {
-        background-size: contain; /* Prevents cutting off */
-        min-height: 150px; /* Adjust height for smaller screens */
-        padding: 10px;
-    }
+.count-card-heading{
+  font-size: 38px; 
+  font-weight: 1000; 
+  color: #fff; 
+  margin: 0px;
+}
+.count-card-paragraph{
+  color:#fff;
 }
 
 
-
 .hero-section {
+  margin-top: 30px;
   height: 80vh;
   display: flex;
   align-items: center;
@@ -148,12 +149,59 @@ nz-card {
   border-radius: 10px;
   margin-top: 10px;
 }
-.blob-img{
+/* .blob-img{
   background:url('../../../../assets/Images/blob-2-opacity-47.gif') no-repeat, url('../../../../assets/Images/blob-1-opacity-59.gif') no-repeat;
   background-position: 150px;
   background-size: 500px 400px;
-}
-.hero-image{
+} */
+/* .hero-image{
   background: url('../../../..//assets/Images/blob-1-opacity-59.gif') no-repeat, url('../../../../assets/Images/blob-2-opacity-47.gif') no-repeat;
   background-size: 600px 300px;
+} */
+
+@media screen and (max-width: 600px) {
+  .hero-section {
+    height: 80vh;
+    flex-direction: column;
+    height: auto;
+    padding: 0px 10%;
+  }
+  .hero-image{
+    display: none;
+  }
+  .guide-steps{
+    display: none;
+  }
+  /* .hero-text {
+    h1 {
+      font-size: 32px;
+    }
+  
+    .buttons {
+      flex-direction: column;
+      gap: 10px;
+  
+      .btn-primary {
+        width: 100%;
+      }
+  
+      .btn-demo {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+  
+  .hero-image {
+    margin-top: 20px;
+  }
+  
+  .image-container {
+    max-width: 300px;
+  }
+  
+  .floating-text {
+    top: 5%;
+    right: -5%;
+  } */
 }

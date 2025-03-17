@@ -9,7 +9,7 @@ nz-header {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    background-color: #f4efe0;
+    background-color: #f7f1e3;
     border-bottom: 1px solid #706a5c;
 }
 .ant-layout, .ant-menu-horizontal{
@@ -20,3 +20,31 @@ nz-header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    background: #001529;
+    color: #001529;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #001529;
+  }
+  
+  .menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  button[nz-button] {
+    background: transparent;
+    border: none;
+    color: white;
+  }

@@ -1,9 +1,16 @@
-.custom-table{
-    border-radius: 30px;
+::ng-deep th .custom-table .ant-table {
+    border-top-left-radius: 20px !important; /* Apply border-radius */
+    border: 1px solid #ddd !important; /* Change table border color */
 }
 .custom-table th{
-    background-color:  #4c626d !important;color: white !important;
+    font-weight: bold;
 }
-.custom-table th, .custom-table td {
-    padding: auto; /* Ensures enough space between elements */
+::ng-deep .custom-table .ant-table-thead > tr > th {
+    background-color: #fff !important; /* Change header background */
+}
+::ng-deep .ant-table-tbody > tr > td {
+    border-bottom: 1px solid;
+    /* border-image: linear-gradient(90deg, #9f884c, #514a38) 1; */
+    border-image: linear-gradient(90deg, #7b61ff, #c56cf0) 1;
+    /* border-bottom: 8px solid linear-gradient(90deg, #7b61ff, #c56cf0); */
 }

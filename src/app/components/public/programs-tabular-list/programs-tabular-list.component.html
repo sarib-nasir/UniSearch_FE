@@ -1,0 +1,57 @@
+<!-- <nz-table #sortTable nzShowPagination nzShowSizeChanger class="custom-table" nzSize="small" [nzData]="programsList.DATA" [nzScroll]="{ x: '700px' }" [nzPageSize]="20">
+    <thead>
+        <tr >
+            <th *ngFor="let data of programsList.COLUMNS">{{data}}</th>
+            <th nzRight nzWidth="150px">Action</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of sortTable.data">
+            <td *ngFor="let values of data">{{values}} </td>
+            <td nzRight>
+                <button  nz-button nzType="primary" nz-tooltip
+                    nzTooltipTitle="Edit" nzTooltipPlacement="top" nzSize="small">
+                    <i nz-icon nzType="edit" nzTheme="outline"></i>
+                </button>
+                <button class="ml-10" nz-button nzType="primary"
+                    nz-tooltip nzTooltipTitle="View" nzTooltipPlacement="top" nzSize="small">
+                    <i nz-icon nzType="eye" nzTheme="outline"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</nz-table> -->
+
+<nz-table #sortTable nzShowPagination nzShowSizeChanger class="custom-table" nzSize="small" [nzData]="programsList" [nzScroll]="{ x: '700px' }" [nzPageSize]="20">
+    <thead>
+        <tr>
+            <th>Program Name</th>
+            <th>University Name</th>
+            <th>IELTS</th>
+            <th>Language of Instruction</th>
+            <th>Application Deadline</th>
+            <th>Useful Links</th>
+            <th nzRight nzWidth="150px">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of sortTable.data">
+            <td>{{data.PROGRAM_NAME}}</td>
+            <td>{{data?.UNIVERSITIES.UNIVERSITY_NAME}}</td>
+            <td>{{data?.IELTS_SCORE}}</td>
+            <td>{{data?.LANGUAGES.LANGUAGE}}</td>
+            <td>{{data?.APPLICATION_DEADLINE}}</td>
+            <td>{{data?.LINKS ? data.LINKS : '--'}}</td>
+            <td nzRight>
+                <button  nz-button nzType="primary" nz-tooltip
+                    nzTooltipTitle="Edit" nzTooltipPlacement="top" nzSize="small">
+                    <i nz-icon nzType="edit" nzTheme="outline"></i>
+                </button>
+                <button class="ml-10" nz-button nzType="primary"
+                    nz-tooltip nzTooltipTitle="View" nzTooltipPlacement="top" nzSize="small">
+                    <i nz-icon nzType="eye" nzTheme="outline"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>

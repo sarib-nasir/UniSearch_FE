@@ -12,8 +12,8 @@ export const environment = {
   //  apiBaseURL: 'http://119.152.241.152/Soneri_WFS_BE',
 
 //For RL_WFS
-  frontBaseURL: 'http://119.152.241.152:112/',
-  apiBaseURL: 'http://119.152.241.152/WFS_BE_V2',
+  frontBaseURL: 'http://ahsanaziz-001-site53.anytempurl.com/',
+  apiBaseURL: 'http://ahsanaziz-001-site54.anytempurl.com',
   // frontBaseURL: 'http://119.152.241.152:100/',
   // apiBaseURL: 'http://119.152.241.152/Soneri_WFS_BE',
 

@@ -1,59 +1,35 @@
-# TemplateBoilerPlateFE2
+# 🎓 UniSearch  
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+**UniSearch** is a web application designed to help users search for universities and programs based on a structured database. It provides an intuitive interface to explore higher education opportunities with powerful filtering and search capabilities.  
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Features  
 
-```bash
-ng serve
-```
+✅ **University Search** – Find universities by name, location, or ranking.  
+✅ **Program Search** – Look up programs based on field of study and degree level.  
+✅ **Advanced Filters** – Apply criteria such as country, tuition fees, and admission requirements.  
+✅ **User-Friendly UI** – Clean and simple interface for seamless navigation.  
+✅ **Fast & Optimized Queries** – Efficient database structure for quick results.  
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🏗️ Tech Stack  
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Frontend:** Angular with NG-Zorro for UI components  
+- **Backend:** .NET Core API  
+- **Database:** SQL (custom schema for universities and programs)  
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Live Demo 🌍
+[View the App](https://deutschzeit.netlify.app/)
 
-```bash
-ng generate --help
-```
 
-## Building
 
-To build the project run:
+## Future Enhancements 💡
+- ✅ Update Program Filter 
+- ✅ Improve UI animations.
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Author 👨‍💻
+- **Sarib Bin Nasir** | [GitHub](https://github.com/sarib-nasir)
